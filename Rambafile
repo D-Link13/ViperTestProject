@@ -1,0 +1,32 @@
+### Headers settings
+company: MyCompany
+
+### Xcode project settings
+project_name: MyProject
+xcodeproj_path: MyProject/MyProject.xcodeproj
+
+### Code generation settings section
+# The main project target name
+project_targets: [MyProject]
+
+# The file path for new modules
+project_file_path: /MyProject/Modules
+
+# The Xcode group path to new modules
+project_group_path: /MyProject/Modules
+
+### Tests generation settings section
+# The tests target name
+test_targets: [MyProjectTests]
+
+# The file path for new tests
+test_file_path: /MyProjectTests
+
+# The Xcode group path to new tests
+test_group_path: /MyProjectTests
+
+### Templates
+templates:
+- {name: swifty_viper}
+- {name: swifty_reusable_cell}
+- {name: swifty_collection_cell}

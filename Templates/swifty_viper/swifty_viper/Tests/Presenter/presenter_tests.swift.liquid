@@ -1,0 +1,69 @@
+//
+//  {{ prefix }}{{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+// MARK: - Imports
+
+@testable import {{ module_info.project_name }}
+import XCTest
+
+class {{ module_info.name }}PresenterTests: XCTestCase {
+// MARK: - Properties
+
+    var presenter: {{ module_info.name }}Presenter!
+    var viewController: {{ module_info.name }}ViewControllerMock!
+    var interactor: {{ module_info.name }}InteractorMock!
+    var router: {{ module_info.name }}RouterMock!
+
+// MARK: - Methods
+
+    override func setUp() {
+        super.setUp()
+        
+        viewController = {{ module_info.name }}ViewControllerMock()
+        router = {{ module_info.name }}RouterMock(viewController: viewController)
+        presenter = {{ module_info.name }}Presenter()
+        presenter.view = viewController
+        presenter.router = router
+
+        interactor = {{ module_info.name }}InteractorMock()
+        interactor.output = presenter
+
+        presenter.interactor = interactor
+        viewController.output = presenter
+    }
+
+    override func tearDown() {
+        viewController = nil
+        presenter = nil
+        interactor = nil
+        router = nil
+
+        super.tearDown()
+    }
+
+// MARK: - {{ module_info.name }}ViewOutput
+
+    func testViewIsReady() {
+        // given
+        // ...
+
+        // when
+        presenter.viewIsReady()
+
+        // then
+        //XCTAssertTrue(interactor.exampleMethodCalled)
+    }
+
+// MARK: - {{ module_info.name }}InteractorOutput
+
+    // ...
+
+// MARK: - {{ module_info.name }}ModuleInput
+
+    // ...
+}

@@ -1,0 +1,65 @@
+//
+//  {{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+public final class {{ module_info.name }}Presenter {
+// MARK: - Construction
+
+    public init() {
+        // ...
+    }
+
+// MARK: - Properties
+
+    public weak var view: {{ module_info.name }}ViewInput!
+    public var interactor: {{ module_info.name }}InteractorInput!
+    public var router: {{ module_info.name }}RouterInput!
+
+// MARK: - Methods
+
+    // ...
+
+// MARK: - Private Methods
+
+    // ...
+
+// MARK: - Constants
+
+    private enum Constants {
+        // ...
+    }
+
+// MARK: - Variables
+
+    // ...
+}
+
+// MARK: - {{ module_info.name }}ViewOutput
+
+extension {{ module_info.name }}Presenter: {{ module_info.name }}ViewOutput {
+// MARK: - Methods
+
+    public func viewIsReady() {
+
+    }
+}
+
+// MARK: - {{ module_info.name }}InteractorOutput
+
+extension {{ module_info.name }}Presenter: {{ module_info.name }}InteractorOutput {
+// MARK: - Methods
+
+    // ...
+}
+
+// MARK: - {{ module_info.name }}ModuleInput
+
+extension {{ module_info.name }}Presenter: {{ module_info.name }}ModuleInput {
+// MARK: - Methods
+
+    // ...
+}

@@ -1,0 +1,43 @@
+//
+//  {{ prefix }}{{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+// MARK: - Imports
+
+import UIKit
+
+public final class {{ module_info.name }}Wireframe {
+// MARK: - Construction
+
+    public init() {}
+
+// MARK: - Methods
+
+    public func init{{ module_info.name }}ViewController(dataStorage: {{ module_info.name }}DataStorage = {{ module_info.name }}DataStorage()) -> {{ module_info.name }}ViewController {
+        if self.viewController == nil {
+			let storyboard = UIStoryboard(
+                name: Constants.storyboardIdentifier,
+                bundle: BundlesService.shared.bundleForResourceName(Constants.storyboardIdentifier)
+			)
+            self.viewController = storyboard.instantiateViewController(withIdentifier: Constants.viewControllerIdentifier) as? {{ module_info.name }}ViewController
+            configurator.configureModuleForViewInput(viewInput: viewController, dataStorage: dataStorage)
+		}
+        return self.viewController!
+	}
+
+// MARK: - Constants
+
+    private enum Constants {
+        static let viewControllerIdentifier = "{{ module_info.name }}ViewController"
+        static let storyboardIdentifier = "{{ module_info.name }}ViewController"
+	}
+
+// MARK: - Variables
+
+    private weak var viewController: {{ module_info.name }}ViewController?
+    private let configurator = {{ module_info.name }}ModuleConfigurator()
+}

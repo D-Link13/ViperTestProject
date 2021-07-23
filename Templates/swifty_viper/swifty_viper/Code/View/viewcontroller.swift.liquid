@@ -1,0 +1,46 @@
+//
+//  {{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+// MARK: - Imports
+
+import UIKit
+
+open class {{ module_info.name }}ViewController: UIViewController {
+// MARK: - Properties
+
+    open var output: {{ module_info.name }}ViewOutput!
+
+// MARK: - Methods
+
+    override open func viewDidLoad() {
+        super.viewDidLoad()
+        output.viewIsReady()
+    }
+
+// MARK: - Private Methods
+
+    // ...
+
+// MARK: - Constants
+
+    private enum Constants {
+        // ...
+    }
+
+// MARK: - Variables
+
+    // ...
+}
+
+// MARK: - {{module_info.name}}ViewInput
+
+extension {{ module_info.name }}ViewController: {{module_info.name}}ViewInput {
+// MARK: - Methods
+
+    // ...
+}

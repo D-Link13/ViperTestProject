@@ -1,0 +1,27 @@
+//
+//  {{ prefix }}{{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+// MARK: - Imports
+
+@testable import {{ module_info.project_name }}
+import XCTest
+
+class {{ module_info.name }}RouterMock: BaseRouterMock {
+
+// MARK: - Properties
+
+    // private(set) var exampleMethodCalled = false
+}
+
+// MARK: - {{ module_info.name }}RouterInput
+
+extension {{ module_info.name }}RouterMock: {{ module_info.name }}RouterInput {
+// MARK: - Methods
+
+    // ...
+}

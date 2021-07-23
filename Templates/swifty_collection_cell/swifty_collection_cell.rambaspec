@@ -1,0 +1,16 @@
+# Template information section
+name: "swifty_reusable_cell"
+summary: "Swift cell wireframe generator"
+author: "Victor Sobolev"
+version: "0.1.1"
+license: "MIT"
+
+# The declarations for code files
+
+code_files:
+
+# Wireframe layer
+- {name: Wireframe.swift, path: swifty_collection_cell/Code/Wireframe/wireframe.swift.liquid}
+
+# Protocols
+- {name: Output.swift, path: swifty_collection_cell/Code/Output/output.swift.liquid}

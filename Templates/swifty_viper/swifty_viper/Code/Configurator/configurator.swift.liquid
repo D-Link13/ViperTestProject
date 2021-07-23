@@ -1,0 +1,54 @@
+//
+//  {{ prefix }}{{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+// MARK: - Imports
+
+import UIKit
+
+public final class {{ module_info.name }}ModuleConfigurator {
+// MARK: - Construction
+
+    public init() { }
+
+// MARK: - Methods
+
+    public func configureModuleForViewInput<UIViewController>(
+        viewInput: UIViewController,
+        dataStorage: {{ module_info.name }}DataStorage
+    ) {
+        if let viewController = viewInput as? {{ module_info.name }}ViewController {
+            configure(
+                viewController: viewController,
+                dataStorage: dataStorage
+            )
+        }
+    }
+
+// MARK: - Private Methods
+
+    private func configure(
+        viewController: {{ module_info.name }}ViewController,
+        dataStorage: {{ module_info.name }}DataStorage
+    ) {
+
+        let router = {{ module_info.name }}Router(viewController: viewController)
+
+        let presenter = {{ module_info.name }}Presenter()
+        presenter.view = viewController
+        presenter.router = router
+
+        let interactor = {{ module_info.name }}Interactor(
+            output: presenter,
+            dataStorage: dataStorage
+        )
+
+        presenter.interactor = interactor
+        viewController.output = presenter
+    }
+
+}

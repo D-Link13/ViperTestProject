@@ -1,0 +1,38 @@
+//
+//  {{ prefix }}{{ module_info.name }}{{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+// MARK: - Imports
+
+import UIKit
+
+let {{ module_info.name }}Identifier = "{{ module_info.name }}"
+
+final class {{ module_info.name }} : UICollectionViewCell {
+    weak var output: {{ module_info.name }}Output?
+
+     func setData(data: {{ module_info.name }}Data) {
+        
+    }
+}
+
+final class {{ module_info.name }}Wireframe {
+
+    static func setUpCell(collectionView: UICollectionView, indexPath: IndexPath, data: {{ module_info.name }}Data) -> {{ module_info.name }} {
+    	collectionView.register({{ module_info.name }}.self)
+
+        let cell = collectionView.dequeueReusableCell({{ module_info.name }}.self, forIndexPath: indexPath)
+        cell.setData(data: data)
+
+        return cell
+    }
+
+}
+
+protocol {{ module_info.name }}Data {
+	
+}

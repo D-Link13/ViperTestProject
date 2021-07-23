@@ -1,0 +1,43 @@
+//
+//  {{ prefix }}{{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+// MARK: - Imports
+
+@testable import {{ module_info.project_name }}
+import XCTest
+
+class {{ module_info.name }}InteractorTests: XCTestCase {
+// MARK: - Properties
+
+    var interactor: {{ module_info.name }}Interactor!
+    var dataStorage: {{ module_info.name }}DataStorage!
+    var presenter: {{ module_info.name }}PresenterMock!
+
+// MARK: - Methods
+
+    override func setUp() {
+        super.setUp()
+
+        presenter = {{ module_info.name }}PresenterMock()
+        dataStorage = {{ module_info.name }}DataStorage()
+        
+        interactor = {{ module_info.name }}Interactor(output: presenter, dataStorage: dataStorage)
+    }
+
+    override func tearDown() {
+        interactor = nil
+        presenter = nil
+        dataStorage = nil
+
+        super.tearDown()
+    }
+
+// MARK: - {{ module_info.name }}InteractorInput
+
+    // ...
+}

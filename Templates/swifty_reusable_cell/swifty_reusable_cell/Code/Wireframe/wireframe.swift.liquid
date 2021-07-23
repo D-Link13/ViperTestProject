@@ -1,0 +1,28 @@
+//
+//  {{ prefix }}{{ module_info.name }}{{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+// MARK: - Imports
+
+import UIKit
+
+let {{ module_info.name }}Identifier = "{{ module_info.name }}"
+
+final class {{ module_info.name }}: UITableViewCell {
+    weak var output: {{ module_info.name }}Output?
+
+}
+
+final class {{ module_info.name }}Wireframe {
+
+    func setUpCell() -> {{ module_info.name }} {
+       
+        let cell = UserInterfaceService.viewFromMainBundle(identifier: {{ module_info.name }}Identifier, bundle: BundlesService.shared.bundleForResourceName({{ module_info.name }}Identifier)!) as! {{ module_info.name }}
+        return cell
+    }
+
+}
